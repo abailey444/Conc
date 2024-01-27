@@ -31,6 +31,6 @@ public class UI : MonoBehaviour {
     private void DisplaySpeed() {
         double velocity = player.GetComponent<Rigidbody2D>().velocity.magnitude;
         velocity = Math.Round(velocity,2);
-        speedometer.text = "Speedo: " + velocity.ToString();   
+        speedometer.text = velocity.ToString();   
     }
 }

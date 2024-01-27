@@ -380,6 +380,7 @@
 "Assets/Scripts/Base Gameplay/MassCalculator.cs"
 "Assets/Scripts/Base Gameplay/RightSlingshot.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Teleport.cs"
 "Assets/Scripts/UI.cs"
 -langversion:9.0
 

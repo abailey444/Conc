@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grenade
   - Ice
+  - Tele
   layers:
   - Default
   - TransparentFX

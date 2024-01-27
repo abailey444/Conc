@@ -18,7 +18,7 @@ public class MassCalculator : MonoBehaviour {
         float newMass;
         float boundsArea = colliderBounds.size.x * colliderBounds.size.y;
 
-        if(boundsArea >= 2)
+        if(boundsArea >= 1.9f)
             newMass = 1;
         else
             newMass = (colliderBounds.size.x * colliderBounds.size.y) / 2;

@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour {
         Vector3 targetPos = new Vector3(player.transform.position.x, player.transform.position.y + 2, -10);
         Vector3 currentPos = new Vector3(transform.position.x, transform.position.y, -10);
 
-        float distance = Vector3.Distance(targetPos,currentPos);
+        float distance = (targetPos - currentPos).magnitude;
         float speedChange = (speed / distance);
 
         float time = Time.deltaTime * speedChange * speed;
