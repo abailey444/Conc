@@ -180,3 +180,4 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  explosion: {fileID: 3093733795913800997, guid: d287a0d094f7e214ba9c87837391549a, type: 3}
