@@ -30,7 +30,6 @@ public class BasicMovement : MonoBehaviour {
 
         clampValues[0] = -6.5f;
         clampValues[1] = 6.5f;
-        rb.drag = 1;
     }
 
     private void FixedUpdate() {
@@ -43,20 +42,19 @@ public class BasicMovement : MonoBehaviour {
 
         switch(forceModifier) {
             case(ForceModifier.normal):
-                rb.drag = 5;
                 _input *= p_HorizontalThrust * Time.deltaTime * 15;
                 rb.AddForce(Vector2.right * _input, ForceMode2D.Force);
                 Vector2 clampedVelNorm = rb.velocity;
                 clampedVelNorm.x = Mathf.Clamp(clampedVelNorm.x, clampValues[0], clampValues[1]);
                 rb.velocity = clampedVelNorm;
+
+                rb.AddForce(rb.velocity * -4f, ForceMode2D.Force);
                 break;
             case(ForceModifier.air):
-                rb.drag = 0;
                 _input = ModifyAirVelocity(_input);
                 rb.AddForce(Vector2.right * _input, ForceMode2D.Force);
                 break;
             case(ForceModifier.ice):
-                rb.drag = 0;
                 _input *= p_HorizontalThrust * Time.deltaTime * 5;
                 rb.AddForce(Vector2.right * _input, ForceMode2D.Force);
                 Vector2 clampedVelIce = rb.velocity;
