@@ -35,10 +35,6 @@ public class BasicMovement : MonoBehaviour {
     private void FixedUpdate() {
         ChangeForceState();
         float _input = Input.GetAxis("Horizontal");
-        if(_input > 0)
-            GetComponent<SpriteRenderer>().flipX = false;
-        else if(_input < 0)
-            GetComponent<SpriteRenderer>().flipX = true;
 
         switch(forceModifier) {
             case(ForceModifier.normal):

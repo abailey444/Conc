@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e57389b5fcef728419b2c2356663790e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,8 +133,6 @@ MonoBehaviour:
     m_Bits: 64
   explosion: {fileID: 3093733795913800997, guid: d287a0d094f7e214ba9c87837391549a, type: 3}
   secondsToDet: 0
-  anim1: {fileID: 7400000, guid: 69d01d7c5c9fd49409c5df9ecc0f43cd, type: 2}
-  anim2: {fileID: 7400000, guid: 26f53ac04cfbd81419dab00805582a3d, type: 2}
 --- !u!58 &2208305661859688946
 CircleCollider2D:
   m_ObjectHideFlags: 0
