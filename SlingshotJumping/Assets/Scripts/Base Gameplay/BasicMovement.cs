@@ -138,7 +138,7 @@ public class BasicMovement : MonoBehaviour {
 
     private void TryToUncrouch() {
         Vector2 origin = new Vector2(this.transform.position.x, this.transform.position.y + 0.5f);
-        RaycastHit2D hit = Physics2D.CapsuleCast(origin, new Vector2(1,1), CapsuleDirection2D.Vertical, 0, Vector2.up, 1, ~ignoredLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(origin, new Vector2(1,0.5f), 0, Vector2.up, 0.5f, ~ignoredLayer);
         if(hit.collider == null)
             UnCrouch();
     }
