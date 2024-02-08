@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 38
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2033,7 +2033,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d22afeffd82cfeff
+      m_ExpandedIDs: d82cfeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2722,7 +2722,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2730,15 +2730,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\dfernandez7\Documents\GitHub\Conc\SlingshotJumping
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 5e410000
-    m_LastClickedID: 16734
+    m_SelectedIDs: e6400000
+    m_LastClickedID: 16614
     m_ExpandedIDs: 00000000e6400000424100005a43000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
