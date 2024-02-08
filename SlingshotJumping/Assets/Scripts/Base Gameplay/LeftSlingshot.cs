@@ -5,6 +5,7 @@ using UnityEngine;
 public class LeftSlingshot : MonoBehaviour {
     [SerializeField] public GameObject grenade;
     [SerializeField] public GameObject otherSlingshot;
+    [SerializeField] public GameObject canvas;
     private Vector3 mousePos;
     
     private void Update() {
@@ -14,13 +15,13 @@ public class LeftSlingshot : MonoBehaviour {
     }
 
     private void ListenForInputs() {
-        if(Input.GetMouseButton(0)) {
+        if(Input.GetMouseButton(0) && canvas.GetComponent<UI>().progress == 0) {
             AimSlingshot();
-        } if(Input.GetMouseButtonUp(0)) {
+        } if(Input.GetMouseButtonUp(0) && canvas.GetComponent<UI>().progress == 0) {
             ShootSlingshot();
             transform.localRotation = Quaternion.Euler(0,0,0);
             otherSlingshot.GetComponent<RightSlingshot>().enabled = true;
-        } if(Input.GetMouseButtonDown(0)) {
+        } if(Input.GetMouseButtonDown(0) && canvas.GetComponent<UI>().progress == 0) {
             otherSlingshot.GetComponent<RightSlingshot>().enabled = false;
         }
     }
@@ -41,5 +42,6 @@ public class LeftSlingshot : MonoBehaviour {
         _grenade.GetComponent<Grenade>().secondsToDet = 2;
 
         GetComponent<SpriteRenderer>().enabled = false;
+        StartCoroutine(canvas.GetComponent<UI>().UpdateLoadingBar());
     }
 }
