@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 476810611}
   - component: {fileID: 476810614}
   - component: {fileID: 476810615}
+  - component: {fileID: 476810616}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -263,7 +264,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.999887
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -357,6 +358,30 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &476810616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476810610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 43
+  m_RefResolutionX: 768
+  m_RefResolutionY: 432
+  m_CropFrame: 4
+  m_GridSnapping: 1
+  m_FilterMode: 1
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &511731727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1342370030
 Transform:
   m_ObjectHideFlags: 0
@@ -1401,8 +1426,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.0066497326, y: 6.5035496, z: 0}
-    m_Extent: {x: 7.9993496, y: 11.50095, z: 0}
+    m_Center: {x: 0.004900217, y: 6.4979, z: 0}
+    m_Extent: {x: 7.9941998, y: 11.4998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2382,8 +2407,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0022499561, y: -0.005350113, z: 0}
-    m_Extent: {x: 5.5022497, y: 5.50385, z: 0}
+    m_Center: {x: -0.0014998913, y: -0.0018498898, z: 0}
+    m_Extent: {x: 5.5025997, y: 5.49605, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

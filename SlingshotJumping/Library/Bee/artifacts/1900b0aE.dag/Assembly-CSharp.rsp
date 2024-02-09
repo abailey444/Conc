@@ -404,6 +404,7 @@
 "Assets/Scripts/Base Gameplay/LeftSlingshot.cs"
 "Assets/Scripts/Base Gameplay/MassCalculator.cs"
 "Assets/Scripts/Base Gameplay/RightSlingshot.cs"
+"Assets/Scripts/ButtonScript.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Procedural Generation/DebugCamera.cs"
 "Assets/Scripts/Procedural Generation/Generator.cs"

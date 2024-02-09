@@ -6,7 +6,10 @@ public class CameraController : MonoBehaviour {
     [SerializeField] public GameObject player;
     [SerializeField] public float speed;
 
-    private void Start() => gameObject.GetComponent<Camera>().backgroundColor = Color.black;
+    private void Start()  {
+        gameObject.GetComponent<Camera>().backgroundColor = Color.black;
+        Screen.SetResolution(768, 432, true);
+    }
 
     private void FixedUpdate() {
         Vector3 targetPos = new Vector3(player.transform.position.x, player.transform.position.y + 2, -10);
