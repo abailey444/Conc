@@ -36,7 +36,7 @@ public class LeftSlingshot : MonoBehaviour {
 
     private void ShootSlingshot() {
         float distance = Vector3.Distance(mousePos,transform.position);
-        distance *= 1;
+        distance = Mathf.Clamp(distance, 0, 13);
         GameObject _grenade = Instantiate(grenade,transform.position,Quaternion.identity) as GameObject;
         _grenade.GetComponent<Rigidbody2D>().AddForce(gameObject.transform.up * distance, ForceMode2D.Impulse);
         _grenade.GetComponent<Grenade>().secondsToDet = 2;

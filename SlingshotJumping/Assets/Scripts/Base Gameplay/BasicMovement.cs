@@ -44,7 +44,7 @@ public class BasicMovement : MonoBehaviour {
                 clampedVelNorm.x = Mathf.Clamp(clampedVelNorm.x, clampValues[0], clampValues[1]);
                 rb.velocity = clampedVelNorm;
 
-                rb.AddForce(rb.velocity * -4f, ForceMode2D.Force);
+                rb.AddForce(new Vector2(rb.velocity.x, 0) * (-5 * 50) * Time.deltaTime, ForceMode2D.Force);
                 break;
             case(ForceModifier.air):
                 _input = ModifyAirVelocity(_input);
