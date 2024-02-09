@@ -7,6 +7,8 @@ TagManager:
   - Grenade
   - Ice
   - Tele
+  - Key
+  - Button
   layers:
   - Default
   - TransparentFX
