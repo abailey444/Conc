@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Basic.unity
     guid: 958b88c18244adb45a457e6796e1805a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 2575d3c6907de8344b097b9a36fdfae6
+  - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: 576c6ca9949b48444a602bf09a5bf772
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 13454e34fdd48fd49b6b3a6e3c3de44d
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: bf90c318e269ce44b923c76f7682e689
   m_configObjects: {}
