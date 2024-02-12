@@ -74,7 +74,8 @@ public class BasicMovement : MonoBehaviour {
         if(tryingToUncrouch)
             TryToUncrouch();
 
-        rayDown = Physics2D.Raycast(transform.position, Vector2.down, rayLength, ~ignoredLayer);
+        //rayDown = Physics2D.Raycast(transform.position, Vector2.down, rayLength, ~ignoredLayer);
+        rayDown = Physics2D.BoxCast(transform.position, new Vector2(1,1), 0, Vector2.down, rayLength, ~ignoredLayer);
     }
 
     private float ModifyAirVelocity(float input) {
