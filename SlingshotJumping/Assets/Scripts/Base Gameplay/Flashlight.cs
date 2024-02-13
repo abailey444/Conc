@@ -27,14 +27,9 @@ namespace UnityEngine.Rendering.Universal {
             mousePos.z = transform.position.z;
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
         
-            // Change speed based on if the mouse is inside the player.
-            // Meant to prevent fast and weird looking flashlight movements.
-            // May be a very slight performance hit (estimated 5 frames.)
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, player.transform.position, 5f, playerLayer);
-            if(hit.collider == null)
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10f * Time.deltaTime); // Default speed
-            else
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 3f * Time.deltaTime);
+            float magnitude = Vector2.Distance(transform.position, mousePos);
+            magnitude = Mathf.Clamp(magnitude,0,3);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 3f * Time.deltaTime * magnitude);
 
             // This part changes the way the sprite is facing based on the mouse position.
             var delta = player.transform.position.x - mousePos.x;

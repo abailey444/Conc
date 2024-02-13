@@ -74,7 +74,7 @@ public class BasicMovement : MonoBehaviour {
         if(tryingToUncrouch)
             TryToUncrouch();
 
-        rayDown = Physics2D.BoxCast(transform.position, new Vector2(1,1), 0, Vector2.down, rayLength, ~ignoredLayer);
+        rayDown = Physics2D.BoxCast(transform.position, new Vector2(1,0.5f), 0, Vector2.down, rayLength, ~ignoredLayer);
     }
 
     private float ModifyAirVelocity(float input) {
@@ -105,7 +105,7 @@ public class BasicMovement : MonoBehaviour {
 
     // https://www.youtube.com/watch?v=eJik78bWSg0
     private void Jump() {
-        if(rayDown.collider != null) {
+        if(rayDown.collider != null && !tryingToUncrouch) {
             // save me... save me lord ...... lord save me ....
             if(rb.mass <= 0.9) // AGHJ
                 rb.AddForce(transform.up * (p_VerticalThrust * 0.5f), ForceMode2D.Impulse);
