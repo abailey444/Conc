@@ -8,10 +8,10 @@ public class ButtonScript : MonoBehaviour
     public AudioSource audioSource;
     private string sceneName;
     public Animator transition;
-    public float transitionTime = 1f;
+    public float transitionTime = 0.5f;
 
 
-    /*IEnumerator PlayAudioAndLoadScene()
+    IEnumerator PlayAudioAndLoadScene()
     {
         // Play AudioSource
         audioSource.Play();
@@ -21,8 +21,8 @@ public class ButtonScript : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // Load your scene
-        LoadScene(sceneName)
-    }*/
+        LoadScene(sceneName);
+    }
 
     public void LoadScene(string scene)
     {
@@ -31,33 +31,34 @@ public class ButtonScript : MonoBehaviour
     public void OnClickStart()
     {
         sceneName = "Basic";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void OnClickHelp()
     {
         sceneName = "Help";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void OnClickCredits()
     {
         sceneName = "Credits";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void OnClickMainMenu()
     {
         sceneName = "TitleScreen";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void OnClickQuit()
     {
+        Debug.Log("QuitPressed");
         Application.Quit();
     }
 }
