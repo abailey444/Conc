@@ -408,6 +408,7 @@
 "Assets/Scripts/Base Gameplay/RightSlingshot.cs"
 "Assets/Scripts/ButtonScript.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/LightOffEditor.cs"
 "Assets/Scripts/Procedural Generation/DebugCamera.cs"
 "Assets/Scripts/Procedural Generation/Generator.cs"
 "Assets/Scripts/Procedural Generation/Rooms.cs"
