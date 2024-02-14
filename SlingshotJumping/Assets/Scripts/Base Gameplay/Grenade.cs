@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour {
     private GameObject player;
-    private GameObject cam;
     public LayerMask playerLayer;
     public GameObject explosion;
     public int secondsToDet;
@@ -12,7 +11,6 @@ public class Grenade : MonoBehaviour {
 
     private void Start() {
         player = GameObject.Find("Player");
-        cam = Camera.main.gameObject;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(PlayAnimation());
         Invoke("Explode",secondsToDet);
@@ -59,7 +57,6 @@ public class Grenade : MonoBehaviour {
 
         // make the knockback additive to current velocity
         player.GetComponent<Rigidbody2D>().AddForce(diff, ForceMode2D.Impulse);
-        StartCoroutine(cam.GetComponent<CameraController>().AddCameraKnockback(player.GetComponent<Rigidbody2D>().velocity));
     }
 
     private IEnumerator DestroyGrenade() {
