@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerScript : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class TriggerScript : MonoBehaviour
         if (collider.gameObject.tag == "Button")
         {
             door.SetActive(false);
+        }
+
+        if(collider.gameObject.tag == "Monster")
+        {
+            //play monster jumpscare screen
+            SceneManager.LoadScene("Credits"); //load lose scene instead
         }
     }
 }

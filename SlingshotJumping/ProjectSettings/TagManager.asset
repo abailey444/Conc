@@ -9,6 +9,8 @@ TagManager:
   - Tele
   - Key
   - Button
+  - Monster
+  - Keypad
   layers:
   - Default
   - TransparentFX
