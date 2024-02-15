@@ -2032,7 +2032,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2420feff
+      m_ExpandedIDs: d01ffeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2673,7 +2673,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SFX
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2681,15 +2681,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SFX
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\dfernandez7\Documents\GitHub\Conc\SlingshotJumping
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: c6410000
-    m_LastClickedID: 16838
+    m_SelectedIDs: e6400000
+    m_LastClickedID: 16614
     m_ExpandedIDs: 00000000e640000046410000c641000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
