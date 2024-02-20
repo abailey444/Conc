@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 8731119337042317887}
   - component: {fileID: 2736557994826318893}
   - component: {fileID: 8412057133747316646}
+  - component: {fileID: 8145338778701338362}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -136,13 +137,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.999645
+    width: 1
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4.864865
+  orthographic size: 3.3636363
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -189,7 +190,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -223,10 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 37
+  m_AssetsPPU: 55
   m_RefResolutionX: 640
   m_RefResolutionY: 360
-  m_CropFrame: 4
+  m_CropFrame: 0
   m_GridSnapping: 0
   m_FilterMode: 1
   m_UpscaleRT: 0
@@ -331,3 +332,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94a6281fe45682429218a9a746e0b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8145338778701338362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360759824727988245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96de3959d2efacd41b04eff46c90f970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "This object is fairly finicky. If any variable is changed it may completely
+    mess up the output. The settings to note are:\n\nRenderer: set to 2drenderer
+    or the URP will not load.\nPost-Processing: must be set to true or the post processing
+    will never render.\nAnti-Aliasing: must be set to none or the game will look
+    like shit.\nMSAA: another anti-aliasing setting, set to off. \nReference Resolution:
+    must be set to exactly 640 by 360.\nCrop Frame: must be set to none or the post
+    processing won't work.\nGrid Snapping: must be set to none or the player will
+    begin jittering.\nUpdate Method: must be set to Fixed Update or the player will
+    jitter.\nFollow: set to player to follow the player.\nBody: set to transposer
+    or the camera will not follow\nAim: set to do nothing.\nNoise: set to none"
