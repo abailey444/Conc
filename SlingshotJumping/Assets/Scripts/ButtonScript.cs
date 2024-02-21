@@ -56,7 +56,7 @@ public class ButtonScript : MonoBehaviour
     }
     public void LoadStart()
     {
-        sceneName = "Basic";
+        sceneName = "LevelOne";
         LoadScene(sceneName);
         //StartCoroutine(PlayAudioAndLoadScene());
     }
