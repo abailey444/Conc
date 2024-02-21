@@ -5,14 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class TriggerScript : MonoBehaviour
 {
+    
+
+
     public bool hasKey = false;
     public GameObject door;
     public GameObject key;
 
+    public GameObject keyPanel;
+    public bool code;
+
+    //public GameObject player;
+    Rigidbody2D playerRigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        keyPanel.SetActive(false);
+        code = false;
+
+        playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -40,5 +52,31 @@ public class TriggerScript : MonoBehaviour
             //play monster jumpscare screen
             SceneManager.LoadScene("Credits"); //load lose scene instead
         }
+
+        if(collider.gameObject.tag == "Door")
+        {
+
+        }
+    }
+
+    public void OnClickKeypad()
+    {
+        keyPanel.SetActive(true);
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+
+    public void OnClickExitKeypad()
+    {
+        keyPanel.SetActive(false);
+        playerRigidbody.constraints = RigidbodyConstraints2D.None;
+    }
+
+    public void OnClickEnter()
+    {
+        if(code == true)
+        {
+            keyPanel.SetActive(false);
+            playerRigidbody.constraints = RigidbodyConstraints2D.None;
+        }  
     }
 }

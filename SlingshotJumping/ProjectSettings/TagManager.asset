@@ -11,6 +11,7 @@ TagManager:
   - Button
   - Monster
   - Keypad
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - Crossfade
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

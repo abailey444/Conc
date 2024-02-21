@@ -62,6 +62,35 @@ MonoBehaviour:
   components:
   - {fileID: 5426527233938700892}
   - {fileID: -8611099383117058887}
+  - {fileID: 573932327204428147}
+--- !u!114 &573932327204428147
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.656
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.486
+  rounded:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &5426527233938700892
 MonoBehaviour:
   m_ObjectHideFlags: 3

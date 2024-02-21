@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MothMonster : MonoBehaviour
 {
+    
+
+
     public Transform playerTransform;
     private float speed;
     private Rigidbody2D rb;
     private Vector3 directionToPlayer;
     private Vector3 localScale;
     float distance;
+
+    public ScaryScr scary;
+
+    Rigidbody2D monsterRigidbody;
 
 
     // Start is called before the first frame update
@@ -20,7 +27,8 @@ public class MothMonster : MonoBehaviour
         
         speed = 2f;
         localScale = transform.localScale;
-        
+        monsterRigidbody = GetComponent<Rigidbody2D>();
+        monsterRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void FixedUpdate()
@@ -53,8 +61,7 @@ public class MothMonster : MonoBehaviour
     {
         if(distance<= 5)
         {
-            //screenshake
-            Debug.Log("Shake the screen");
+            StartCoroutine(scary.MonsterCloseEffect());
         }
     }
 
