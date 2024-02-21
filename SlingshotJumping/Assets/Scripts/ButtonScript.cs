@@ -9,6 +9,8 @@ public class ButtonScript : MonoBehaviour
     private string sceneName;
     public Animator transition;
     public float transitionTime = 1f;
+    private bool isPaused = false;
+    
 
 
     /*IEnumerator PlayAudioAndLoadScene()
@@ -23,33 +25,57 @@ public class ButtonScript : MonoBehaviour
         // Load your scene
         LoadScene(sceneName)
     }*/
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
+        {
+            isPaused = true;
+            Pause();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        {
+            isPaused = false;
+            Resume();
+        }
+    }
 
+    public void Pause()
+    {
+        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        Time.timeScale = 0f;
+
+    }
+    public void Resume()
+    {
+        SceneManager.UnloadSceneAsync("PauseMenu");
+        Time.timeScale = 1f;
+    }
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
-    public void OnClickStart()
+    public void LoadStart()
     {
         sceneName = "Basic";
         LoadScene(sceneName);
         //StartCoroutine(PlayAudioAndLoadScene());
     }
 
-    public void OnClickHelp()
+    public void LoadHelp()
     {
         sceneName = "Help";
         LoadScene(sceneName);
         //StartCoroutine(PlayAudioAndLoadScene());
     }
 
-    public void OnClickCredits()
+    public void LoadCredits()
     {
         sceneName = "Credits";
         LoadScene(sceneName);
         //StartCoroutine(PlayAudioAndLoadScene());
     }
 
-    public void OnClickMainMenu()
+    public void LoadMainMenu()
     {
         sceneName = "TitleScreen";
         LoadScene(sceneName);
