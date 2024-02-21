@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -2030,9 +2030,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ae060100
-      m_LastClickedID: 67246
-      m_ExpandedIDs: de0afeff780cfeff441cfeff001dfeff2a1ffefff0000100
+      m_SelectedIDs: d6fd0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 021cfeffc81cfeff901dfeff1e1ffeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2690,7 +2690,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 62410000
     m_LastClickedID: 16738
-    m_ExpandedIDs: 00000000e640000046410000c641000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000e640000046410000c64100008a43000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
