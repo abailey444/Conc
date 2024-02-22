@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class TriggerScript : MonoBehaviour
 
     public GameObject keyPanel;
     public bool code;
+
+    public AudioSource BookExplosionSFX;
+    public AudioClip BookAudio;
 
     //public GameObject player;
     Rigidbody2D playerRigidbody;
@@ -79,4 +83,19 @@ public class TriggerScript : MonoBehaviour
             playerRigidbody.constraints = RigidbodyConstraints2D.None;
         }  
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        BookAudios();
+    }
+
+    public void BookAudios()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.PlayDelayed(3);
+        audioSource.clip = BookAudio;
+        audioSource.Play();
+    }
 }
+
+  
