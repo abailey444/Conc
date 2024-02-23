@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioTrigger : MonoBehaviour
 {
 
-    public AudioSource BookExplosionSFX;
-    public AudioClip BookAudio;
+    public AudioSource AudioSource;
+    public AudioClip bookThrow;
+    public AudioClip BookExplosion;
+    public bool grenadeThrown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +22,20 @@ public class AudioTrigger : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void bookCheck()
     {
-        BookAudios();
+        if (Input.GetKeyUp(KeyCode.LeftMeta))
+        {
+            BookAudios();
+        }
     }
 
     public void BookAudios()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.PlayDelayed(3);
-        audioSource.clip = BookAudio;
+        audioSource.clip = bookThrow;
         audioSource.Play();
+        audioSource.clip = BookExplosion;
+        audioSource.PlayDelayed(3);
     }
 }
