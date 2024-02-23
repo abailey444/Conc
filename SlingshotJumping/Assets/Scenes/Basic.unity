@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 473333877}
   - component: {fileID: 473333876}
   - component: {fileID: 473333878}
+  - component: {fileID: 473333879}
   m_Layer: 0
   m_Name: Key
   m_TagString: Key
@@ -794,6 +795,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &473333879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473333875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d323bbfa4a37014f97e8951a5fb2730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511731727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,8 +2453,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -0.006500244, y: 6.4973, z: 0}
-    m_Extent: {x: 7.9987, y: 11.5066, z: 0}
+    m_Center: {x: 0.0037999153, y: 6.5015507, z: 0}
+    m_Extent: {x: 8.003901, y: 11.50675, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2492,7 +2505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1342779181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,8 +3766,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00014996529, y: -0.00064992905, z: 0}
-    m_Extent: {x: 5.50095, y: 5.50175, z: 0}
+    m_Center: {x: -0.00639987, y: 0.0028500557, z: 0}
+    m_Extent: {x: 5.5027, y: 5.50605, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4424,7 +4437,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.9, y: 1.95}
   m_EdgeRadius: 0
 --- !u!114 &1848475513
 MonoBehaviour:
@@ -4455,6 +4468,8 @@ MonoBehaviour:
   key: {fileID: 473333875}
   keyPanel: {fileID: 972272372}
   code: 0
+  BookExplosionSFX: {fileID: 0}
+  BookAudio: {fileID: 0}
 --- !u!1 &1868389865
 GameObject:
   m_ObjectHideFlags: 0

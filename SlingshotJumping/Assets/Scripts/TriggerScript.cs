@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class TriggerScript : MonoBehaviour
 {
-    
-
-
     public bool hasKey = false;
     public GameObject door;
     public GameObject key;
@@ -22,7 +19,6 @@ public class TriggerScript : MonoBehaviour
     //public GameObject player;
     Rigidbody2D playerRigidbody;
 
-    // Start is called before the first frame update
     void Start()
     {
         keyPanel.SetActive(false);
@@ -31,18 +27,11 @@ public class TriggerScript : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
         if (collider.gameObject.tag == "Key")
         {
-            Destroy(collider.gameObject);
             hasKey = true;
         }
 
@@ -72,7 +61,7 @@ public class TriggerScript : MonoBehaviour
     public void OnClickExitKeypad()
     {
         keyPanel.SetActive(false);
-        playerRigidbody.constraints = RigidbodyConstraints2D.None;
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void OnClickEnter()
@@ -80,7 +69,7 @@ public class TriggerScript : MonoBehaviour
         if(code == true)
         {
             keyPanel.SetActive(false);
-            playerRigidbody.constraints = RigidbodyConstraints2D.None;
+            playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }  
     }
 
