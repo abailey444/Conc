@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TriggerScript : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class TriggerScript : MonoBehaviour
 
     public AudioSource BookExplosionSFX;
     public AudioClip BookAudio;
+
+    public InputField codeInput;
 
     //public GameObject player;
     Rigidbody2D playerRigidbody;
@@ -48,8 +51,13 @@ public class TriggerScript : MonoBehaviour
 
         if(collider.gameObject.tag == "Door")
         {
-
+            if (hasKey == true)
+            {
+                Destroy(collider.gameObject);
+            }
         }
+
+        if(collider.gameObject.)
     }
 
     public void OnClickKeypad()
