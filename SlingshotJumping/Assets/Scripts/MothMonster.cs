@@ -19,6 +19,13 @@ public class MothMonster : MonoBehaviour
 
     Rigidbody2D monsterRigidbody;
 
+    public LayerMask ground;
+
+    float yVal;
+
+
+   
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +70,31 @@ public class MothMonster : MonoBehaviour
         {
             StartCoroutine(scary.MonsterCloseEffect());
         }
+    }
+
+    bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, ground);
+        if (hit.collider != null)
+        {
+            return true;
+            speed = 2f;
+            yVal = transform.position.y;
+            transform.position = new Vector2(transform.position.x,yVal);
+
+        }
+        else
+        {
+            return false;
+            speed = 1.0f;
+
+            //see what height it is right before it leaves ground, cap it at like height +2 and then return it to original height slowly
+        }
+        //if its on the ground, check the y val if it isnt on the ground use the flight.
     }
 
     //make transorm instead of player object
