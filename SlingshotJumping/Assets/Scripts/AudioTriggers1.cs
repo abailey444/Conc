@@ -10,32 +10,30 @@ public class AudioTrigger : MonoBehaviour
     public AudioClip bookThrow;
     public AudioClip BookExplosion;
     public bool grenadeThrown = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void bookCheck()
-    {
-        if (Input.GetKeyUp(KeyCode.LeftMeta))
-        {
-            BookAudios();
-        }
-    }
-
-    public void BookAudios()
+    IEnumerator bookTossAndBoom()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.clip = bookThrow;
         audioSource.Play();
+        yield return new WaitForSeconds(1);
         audioSource.clip = BookExplosion;
         audioSource.PlayDelayed(3);
+
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            bookTossAndBoom();
+        }
+    }
+
+    public void bookCheck()
+    {
+
     }
 }
+
+
