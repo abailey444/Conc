@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 158046213}
   - component: {fileID: 158046212}
   - component: {fileID: 158046211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2326,8 +2326,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.999645
-    height: 1
+    width: 1
+    height: 0.9992898
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -2906,6 +2906,7 @@ GameObject:
   - component: {fileID: 1426914244}
   - component: {fileID: 1426914243}
   - component: {fileID: 1426914242}
+  - component: {fileID: 1426914248}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2947,6 +2948,10 @@ MonoBehaviour:
   hasKey: 0
   door: {fileID: 2064247682}
   key: {fileID: 280188026}
+  keyPanel: {fileID: 0}
+  code: 0
+  BookExplosionSFX: {fileID: 0}
+  BookAudio: {fileID: 0}
 --- !u!114 &1426914243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,6 +3110,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1426914248
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426914240}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1480554334
 GameObject:
   m_ObjectHideFlags: 3
@@ -3255,8 +3356,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -0.0011000633, y: 6.4981003, z: 0}
-    m_Extent: {x: 7.9911, y: 11.5068, z: 0}
+    m_Center: {x: 0.007950306, y: 6.5036497, z: 0}
+    m_Extent: {x: 7.99725, y: 11.50545, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3864,6 +3965,7 @@ GameObject:
   - component: {fileID: 1761988789}
   - component: {fileID: 1761988788}
   - component: {fileID: 1761988787}
+  - component: {fileID: 1761988790}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -3884,6 +3986,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1426914241}
+  scary: {fileID: 1761988790}
+  ground:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &1761988785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3945,7 +4051,7 @@ Transform:
   m_GameObject: {fileID: 1761988782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.16, y: -0.976, z: 0}
+  m_LocalPosition: {x: -15.24, y: -0.976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4048,6 +4154,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1761988790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761988782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ea7990a1810d145a5cada80f3d0950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0
 --- !u!1 &1788604454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,8 +4233,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0042500496, y: -0.0010499954, z: 0}
-    m_Extent: {x: 5.49295, y: 5.50425, z: 0}
+    m_Center: {x: 0.008700132, y: -0.005749941, z: 0}
+    m_Extent: {x: 5.5001, y: 5.50095, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

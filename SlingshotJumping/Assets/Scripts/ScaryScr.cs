@@ -17,15 +17,18 @@ public class ScaryScr : MonoBehaviour
     Volume _volume;
     Vignette _vignette;
 
-
-
+    public Camera mainCam;
 
     public IEnumerator MonsterCloseEffect()
     {
-        intensity = 0.6f;
+
+
+
+
+        intensity = 1f;
 
         //_vignette.enabled.Override(true);
-        _vignette.intensity.value = 0.6f;
+        _vignette.intensity.value = 1;
 
         yield return new WaitForSeconds(0.4f);
 
@@ -35,7 +38,7 @@ public class ScaryScr : MonoBehaviour
 
             if (intensity < 0) intensity = 0;
 
-            _vignette.intensity.value = 0.6f;
+            _vignette.intensity.value = 1f;
 
             yield return new WaitForSeconds(0.1f);
         }
