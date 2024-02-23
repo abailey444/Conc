@@ -10,7 +10,7 @@ public class Key : MonoBehaviour {
         if(col.gameObject.tag == "Player")
             player = col.gameObject;
             isActive = true;
-        if(isActive && col.gameObject.tag == "Keypad")
+        if (isActive && col.gameObject.tag == "Keypad")
             isActive = false;
     }
 
