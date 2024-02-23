@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8599a847fbcf4a049837a3ce15ff94ee
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AudioSource: {instanceID: 0}
+  - bookThrow: {fileID: 8300000, guid: 81c31f037e05a674592441f12cf6c4f5, type: 3}
+  - BookExplosion: {fileID: 8300000, guid: 03b97a82609455649917911887b2b618, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

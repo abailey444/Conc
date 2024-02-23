@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6091665546770431932}
   - component: {fileID: 6701706338765576328}
   - component: {fileID: 8396311969745645875}
+  - component: {fileID: -3740903479661190078}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -214,6 +215,25 @@ MonoBehaviour:
   hasKey: 0
   door: {fileID: 0}
   key: {fileID: 0}
+  keyPanel: {fileID: 0}
+  code: 0
+  BookExplosionSFX: {fileID: 0}
+  BookAudio: {fileID: 0}
+--- !u!114 &-3740903479661190078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129035337249254852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8599a847fbcf4a049837a3ce15ff94ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BookExplosionSFX: {fileID: 0}
+  BookAudio: {fileID: 8300000, guid: 03b97a82609455649917911887b2b618, type: 3}
+  grenadeThrown: 0
 --- !u!1 &4363074422002499757
 GameObject:
   m_ObjectHideFlags: 0
