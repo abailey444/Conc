@@ -14,13 +14,26 @@ public class TriggerScript : MonoBehaviour
     public GameObject keyPanel;
     public bool code;
 
-    public AudioSource BookExplosionSFX;
-    public AudioClip BookAudio;
+    public AudioSource AudioSource;
+    public AudioClip bookThrow;
+    public AudioClip bookExplosion;
 
     public InputField codeInput;
 
     //public GameObject player;
     Rigidbody2D playerRigidbody;
+
+
+    IEnumerator bookTossAndBoom()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = bookThrow;
+        audioSource.Play();
+        yield return new WaitForSeconds(1);
+        audioSource.clip = bookExplosion;
+        audioSource.Play();
+
+    }
 
     void Start()
     {
@@ -29,7 +42,14 @@ public class TriggerScript : MonoBehaviour
 
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
-
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            bookTossAndBoom();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
@@ -57,7 +77,10 @@ public class TriggerScript : MonoBehaviour
             }
         }
 
-        if(collider.gameObject.)
+        if(collider.gameObject.tag == "Door")
+        {
+            Debug.Log("Door");
+        }
     }
 
     public void OnClickKeypad()
@@ -90,7 +113,7 @@ public class TriggerScript : MonoBehaviour
     {
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.PlayDelayed(3);
-        audioSource.clip = BookAudio;
+        audioSource.clip = bookThrow;
         audioSource.Play();
     }
 }

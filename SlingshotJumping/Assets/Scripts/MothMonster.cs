@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MothMonster : MonoBehaviour
 {
-    
 
 
+    public GameObject proximitySFX;
     public Transform playerTransform;
     private float speed;
     private Rigidbody2D rb;
@@ -58,6 +58,8 @@ public class MothMonster : MonoBehaviour
         }
     }
 
+
+
     private void MoveEnemy()
     {
         directionToPlayer = (playerTransform.position - transform.position).normalized;
@@ -68,7 +70,12 @@ public class MothMonster : MonoBehaviour
     {
         if(distance<= 5)
         {
+            proximitySFX.SetActive(true);
             StartCoroutine(scary.MonsterCloseEffect());
+        }
+        if(distance > 9)
+        {
+            proximitySFX.SetActive(false);
         }
     }
 

@@ -11,7 +11,16 @@ public class AudioTrigger : MonoBehaviour
     public AudioClip BookExplosion;
     public bool grenadeThrown = false;
 
-    
+    IEnumerator bookTossAndBoom()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = bookThrow;
+        audioSource.Play();
+        yield return new WaitForSeconds(1);
+        audioSource.clip = BookExplosion;
+        audioSource.Play();
+
+    }
     // Update is called once per frame
     void Update()
     {
