@@ -12,6 +12,9 @@ TagManager:
   - Monster
   - Keypad
   - Door
+  - Spawner
+  - Despawner
+  - LevelDoor
   layers:
   - Default
   - TransparentFX
