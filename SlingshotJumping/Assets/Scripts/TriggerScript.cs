@@ -61,6 +61,8 @@ public class TriggerScript : MonoBehaviour
         if (collider.gameObject.tag == "Button")
         {
             door.SetActive(false);
+            Invoke("doorActive", 2f);
+            
         }
 
         if(collider.gameObject.tag == "Monster")
@@ -115,6 +117,11 @@ public class TriggerScript : MonoBehaviour
         audioSource.PlayDelayed(3);
         audioSource.clip = bookThrow;
         audioSource.Play();
+    }
+
+    public void doorActive()
+    {
+        door.SetActive(true);
     }
 }
 
