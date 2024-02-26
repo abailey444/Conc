@@ -23,6 +23,8 @@ public class TriggerScript : MonoBehaviour
     //public GameObject player;
     Rigidbody2D playerRigidbody;
 
+    public GameObject monster;
+
 
     IEnumerator bookTossAndBoom()
     {
@@ -39,7 +41,7 @@ public class TriggerScript : MonoBehaviour
     {
         keyPanel.SetActive(false);
         code = false;
-
+        monster.SetActive(false);
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
@@ -77,9 +79,20 @@ public class TriggerScript : MonoBehaviour
             }
         }
 
-        if(collider.gameObject.tag == "Door")
+        if (collider.gameObject.tag == "Spawner")
         {
-            Debug.Log("Door");
+            monster.SetActive(true);
+        }
+        if (collider.gameObject.tag == "Despawner")
+        {
+            monster.SetActive(false);
+        }
+        if (collider.gameObject.tag == "LevelDoor")
+        {
+            if (hasKey == true)
+            {
+                SceneManager.LoadScene("LevelTemplate");
+            }
         }
     }
 
