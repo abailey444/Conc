@@ -13,7 +13,7 @@ public class ButtonScript : MonoBehaviour
     
 
 
-    /*IEnumerator PlayAudioAndLoadScene()
+    IEnumerator PlayAudioAndLoadScene()
     {
         // Play AudioSource
         audioSource.Play();
@@ -23,8 +23,8 @@ public class ButtonScript : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // Load your scene
-        LoadScene(sceneName)
-    }*/
+        LoadScene(sceneName);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
@@ -57,29 +57,29 @@ public class ButtonScript : MonoBehaviour
     public void LoadStart()
     {
         sceneName = "LevelOne";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void LoadHelp()
     {
         sceneName = "Help";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void LoadCredits()
     {
         sceneName = "Credits";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void LoadMainMenu()
     {
         sceneName = "TitleScreen";
-        LoadScene(sceneName);
-        //StartCoroutine(PlayAudioAndLoadScene());
+        //LoadScene(sceneName);
+        StartCoroutine(PlayAudioAndLoadScene());
     }
 
     public void OnClickQuit()
