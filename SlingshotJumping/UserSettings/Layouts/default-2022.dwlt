@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 107
+  controlID: 39
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 537
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -2101,23 +2101,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 40f9fdff6800feff8601feff2807feffee08feffec0bfeffbc1afeff8e1bfeffba1cfeffb61efeff520001009000010072010100b00101008a0601005e07010068070100840701009c070100ae0701005e08010068080100660a01005e0b0100940b0100a60b0100b80b0100ca0b0100e40b0100
+      m_SelectedIDs: d81b0100
+      m_LastClickedID: 72664
+      m_ExpandedIDs: 32d9fdffd8d9fdff5eddfdff70ddfdff7cddfdff8cddfdffa2ddfdff60defdff1cecfdffc2ecfdff48f0fdff5af0fdff66f0fdff76f0fdff8cf0fdff4af1fdff6c00feff1401feff7c04feff8a04feff9204feff9e04feffb004feff6a05feff920dfeff380efeffba11feff6812feff7612feff8012feff8c12feffa812feff6a1cfeff721efeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Player
+        m_OriginalName: Player
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 70654
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -2522,9 +2522,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 105.80326, y: 199.33447, z: -2.0857797}
+    m_Target: {x: -7.319031, y: -3.4321108, z: 2.7395134}
     speed: 2
-    m_Value: {x: 105.80326, y: 199.33447, z: -2.0857797}
+    m_Value: {x: -7.319031, y: -3.4321108, z: 2.7395134}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2574,9 +2574,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 536.6129
+    m_Target: 13.460175
     speed: 2
-    m_Value: 536.6129
+    m_Value: 13.460175
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2754,14 +2754,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\dfernandez7\Documents\GitHub\Conc\SlingshotJumping
+  m_LastProjectPath: C:\Users\sbailey6\Documents\GitHub\Conc\SlingshotJumping
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 62410000
     m_LastClickedID: 16738
-    m_ExpandedIDs: 00000000e64000004641000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000e6400000464100008a43000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2886,7 +2886,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 648
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
