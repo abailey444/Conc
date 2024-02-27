@@ -25,6 +25,9 @@ public class TriggerScript : MonoBehaviour
 
     public GameObject monster;
 
+    //locker opened, then they have the book
+    public bool lockerOpened = false;
+
 
     IEnumerator bookTossAndBoom()
     {
@@ -63,20 +66,13 @@ public class TriggerScript : MonoBehaviour
         if (collider.gameObject.tag == "Button")
         {
             door.SetActive(false);
+            Invoke("DoorBack", 2f);
         }
 
         if(collider.gameObject.tag == "Monster")
         {
             //play monster jumpscare screen
             SceneManager.LoadScene("Credits"); //load lose scene instead
-        }
-
-        if(collider.gameObject.tag == "Door")
-        {
-            if (hasKey == true)
-            {
-                Destroy(collider.gameObject);
-            }
         }
 
         if (collider.gameObject.tag == "Spawner")
@@ -112,9 +108,15 @@ public class TriggerScript : MonoBehaviour
     {
         if(code == true)
         {
+            lockerOpened = true;
             keyPanel.SetActive(false);
             playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }  
+    }
+
+    public void DoorBack()
+    {
+        door.SetActive(true);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
