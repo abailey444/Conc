@@ -17,10 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: bf90c318e269ce44b923c76f7682e689
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelOne.unity
     guid: 76bb1e35747223f47b7edab38e877d2a
   - enabled: 1
     path: Assets/Scenes/LevelTemplate.unity
     guid: 5983e07414281fc4c94690b016f25959
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 0acbacf2a5b6c9d4d81204396afbe2c7
+  - enabled: 0
+    path: Assets/Scenes/Level2.unity
+    guid: 220abcc49f5aff04ab321124ceb50de1
   m_configObjects: {}
