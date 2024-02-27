@@ -155,6 +155,10 @@ MonoBehaviour:
   audioSource: {fileID: 298618953}
   transition: {fileID: 159922408}
   transitionTime: 1
+  startButton: {fileID: 1770206699}
+  quitButton: {fileID: 1560522463}
+  creditsButton: {fileID: 867952981}
+  helpButton: {fileID: 644448006}
 --- !u!4 &127508528
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,7 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.24528301, g: 0.09603061, b: 0.09603061, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

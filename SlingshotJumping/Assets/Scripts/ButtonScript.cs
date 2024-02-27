@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ButtonScript : MonoBehaviour
+public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler//
 {
     public AudioSource audioSource;
     private string sceneName;
     public Animator transition;
     public float transitionTime = 1f;
     private bool isPaused = false;
-    
+
+
+
+    public Button startButton;
+    public Button quitButton;
+    public Button creditsButton;
+    public Button helpButton;
 
 
     IEnumerator PlayAudioAndLoadScene()
@@ -29,14 +37,25 @@ public class ButtonScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
         {
-            isPaused = true;
             Pause();
+            isPaused = true;
+            
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
         {
-            isPaused = false;
             Resume();
+            isPaused = false;
+            
         }
+        
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Cursor has entered selectable area");
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("Cursor has left the selectable area");
     }
 
     public void Pause()
