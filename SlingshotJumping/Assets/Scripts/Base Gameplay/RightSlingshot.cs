@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RightSlingshot : MonoBehaviour {
     [SerializeField] public GameObject grenade;
@@ -15,13 +16,13 @@ public class RightSlingshot : MonoBehaviour {
     }
 
     private void ListenForInputs() {
-        if(Input.GetMouseButton(1) && canvas.GetComponent<UI>().progress == 0) {
+        if(Input.GetMouseButton(1) && canvas.GetComponent<UI>().progress == 0 && !EventSystem.current.IsPointerOverGameObject()) {
             AimSlingshot();
-        } if(Input.GetMouseButtonUp(1) && canvas.GetComponent<UI>().progress == 0) {
+        } if(Input.GetMouseButtonUp(1) && canvas.GetComponent<UI>().progress == 0 && !EventSystem.current.IsPointerOverGameObject()) {
             ShootSlingshot();
             transform.localRotation = Quaternion.Euler(0,0,0);
             otherSlingshot.GetComponent<LeftSlingshot>().enabled = true;
-        } if(Input.GetMouseButtonDown(1) && canvas.GetComponent<UI>().progress == 0) {
+        } if(Input.GetMouseButtonDown(1) && canvas.GetComponent<UI>().progress == 0 && !EventSystem.current.IsPointerOverGameObject()) {
             otherSlingshot.GetComponent<LeftSlingshot>().enabled = false;
         }
     }
