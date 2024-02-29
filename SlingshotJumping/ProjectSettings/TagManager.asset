@@ -14,7 +14,7 @@ TagManager:
   - Door
   - Spawner
   - Despawner
-  - LevelDoor
+  - Exit
   layers:
   - Default
   - TransparentFX

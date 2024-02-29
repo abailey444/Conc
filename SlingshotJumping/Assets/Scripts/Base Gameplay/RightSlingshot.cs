@@ -41,6 +41,9 @@ public class RightSlingshot : MonoBehaviour {
         _grenade.GetComponent<Rigidbody2D>().AddForce(gameObject.transform.up * distance, ForceMode2D.Impulse);
         _grenade.GetComponent<Grenade>().secondsToDet = 1;
 
+        GameObject player = transform.parent.gameObject;
+        player.GetComponent<PlayerSound>().PlaySFX("BookNoiseSFX");
+
         GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(canvas.GetComponent<UI>().UpdateLoadingBar());
     }

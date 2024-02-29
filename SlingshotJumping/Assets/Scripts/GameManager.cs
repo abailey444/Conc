@@ -5,36 +5,76 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+    public static GameManager Instance;
     public string keypadCode;
+    public bool hasKey;
+
+    private string sceneName;
     
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
     private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
+        if(Instance == null) {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        } else if(Instance != this) {
+            Destroy(gameObject);
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         Debug.Log("Scene loaded: " + scene.name);
         Debug.Log("Mode: " + mode);
 
+        sceneName = scene.name;
+
         switch(scene.name) {
             case("TitleScreen"):
             case("PauseMenu"):
             case("Credits"):
             case("Help"):
+                keypadCode = "";
                 break;
             case("Level1"):
-                // do stuff here
+                keypadCode = "Level1";
+                hasKey = false;
                 break;
             case("Level2"):
-                // etc
+                keypadCode = "Level2";
+                hasKey = false;
+                break;
+            case("Level3"):
+                keypadCode = "Level3";
+                hasKey = false;
                 break;
             case("Basic"):
             case("LevelTemplate"):
                 keypadCode = "TESTCODE";
+                hasKey = false;
                 break;
             default:
                 Debug.Log("Case not in switch, doing nothing.");
+                break;
+        }
+    }
+
+    // You should call this function because 
+    // most scripts should already have a 
+    // GameManager on them and you shouldn't 
+    // unnecessarily import UnityEngine.SceneManagement.
+    public void GoToNextLevel() {        
+        switch(sceneName) {
+            case("Level1"):
+                SceneManager.LoadScene("Level2");
+                break;
+            case("Level2"):
+                SceneManager.LoadScene("Level3");
+                break;
+            case("Level3"):
+                SceneManager.LoadScene("TitleScreen");
+                break;
+            default:
+                Debug.Log("Errrrmmmmm......");
                 break;
         }
     }

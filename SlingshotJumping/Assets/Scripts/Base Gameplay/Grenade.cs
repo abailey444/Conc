@@ -41,6 +41,8 @@ public class Grenade : MonoBehaviour {
         if(playerHit) {
             DoKnockback();
         }
+
+        player.GetComponent<PlayerSound>().PlaySFX("BookExplosionSFX");
         
         StartCoroutine(DestroyGrenade());
     }

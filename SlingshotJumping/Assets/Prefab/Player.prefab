@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5765761091711937861}
   - component: {fileID: 6091665546770431932}
   - component: {fileID: 6701706338765576328}
-  - component: {fileID: 8396311969745645875}
-  - component: {fileID: -3740903479661190078}
   - component: {fileID: 362573518171374090}
+  - component: {fileID: 6337878878827325274}
+  - component: {fileID: 4664506065114063187}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -138,7 +138,7 @@ MonoBehaviour:
   p_VerticalThrust: 5
   ignoredLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   crouchHeight: 0.5
   sprites:
   - {fileID: 21300000, guid: 24eb2d2edb657414d9046dcae661ecb4, type: 3}
@@ -201,41 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d615357295b1804b93e3247f1f2e944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8396311969745645875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129035337249254852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a008caa28fb51f4197f7edf2c35524e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasKey: 0
-  door: {fileID: 0}
-  key: {fileID: 0}
-  keyPanel: {fileID: 0}
-  code: 0
-  BookExplosionSFX: {fileID: 0}
-  BookAudio: {fileID: 0}
---- !u!114 &-3740903479661190078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129035337249254852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8599a847fbcf4a049837a3ce15ff94ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  bookThrow: {fileID: 8300000, guid: 03b97a82609455649917911887b2b618, type: 3}
-  BookExplosion: {fileID: 8300000, guid: 81c31f037e05a674592441f12cf6c4f5, type: 3}
-  grenadeThrown: 0
 --- !u!82 &362573518171374090
 AudioSource:
   m_ObjectHideFlags: 0
@@ -332,6 +297,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6337878878827325274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129035337249254852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc37d5227e9e8247808ec8d9027d984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kd:
+    keypadPanel: {fileID: 0}
+    keypadInput: {fileID: 0}
+    keypadLayer:
+      serializedVersion: 2
+      m_Bits: 256
+  passInputs: 1
+--- !u!114 &4664506065114063187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129035337249254852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be282b8969eb3cb4ea508f9152294e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 81c31f037e05a674592441f12cf6c4f5, type: 3}
+  - {fileID: 8300000, guid: 03b97a82609455649917911887b2b618, type: 3}
+  - {fileID: 8300000, guid: ffdc1d11fab83824fa1cbc6def56ca9a, type: 3}
 --- !u!1 &4363074422002499757
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,8 +399,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.003000021, y: 6.5039997, z: 0}
-    m_Extent: {x: 7.9957, y: 11.503, z: 0}
+    m_Center: {x: -0.0027496815, y: 6.50135, z: 0}
+    m_Extent: {x: 8.00185, y: 11.50775, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -497,8 +497,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.005800009, y: 0.004450083, z: 0}
-    m_Extent: {x: 5.4971, y: 5.50465, z: 0}
+    m_Center: {x: 0.00274992, y: 0.0018498898, z: 0}
+    m_Extent: {x: 5.49605, y: 5.49485, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

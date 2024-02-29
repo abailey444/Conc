@@ -16,17 +16,21 @@ public class Interactions : MonoBehaviour {
     [HideInInspector]
     public bool passInputs = true;
 
+    private GameManager instance;
+
     private void Start() {
         Transform child = kd.keypadPanel.transform.GetChild(0);
         kd.keypadInput = child.gameObject.GetComponent<InputField>();
+        instance = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.E) && passInputs) {
+        if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Keypad1)) && passInputs) {
             CheckForOverlapOnPress();
         }
 
-        CheckForNoOverlap();
+        if(!passInputs)
+            CheckForNoOverlap();
     }
 
     private void CheckForOverlapOnPress() {
@@ -43,5 +47,10 @@ public class Interactions : MonoBehaviour {
             kd.keypadPanel.SetActive(false);
             passInputs = true;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(col.gameObject.tag == "Exit" && instance.hasKey == true)
+            instance.GoToNextLevel();
     }
 }

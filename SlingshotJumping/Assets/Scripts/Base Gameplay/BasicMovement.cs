@@ -65,10 +65,10 @@ public class BasicMovement : MonoBehaviour {
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Keypad0))
             Crouch();
         
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.Keypad0))
             tryingToUncrouch = true;
         
         if(tryingToUncrouch)
@@ -103,7 +103,6 @@ public class BasicMovement : MonoBehaviour {
         }
     }
 
-    // https://www.youtube.com/watch?v=eJik78bWSg0
     private void Jump() {
         if(rayDown.collider != null) {
             // save me... save me lord ...... lord save me ....
@@ -111,7 +110,11 @@ public class BasicMovement : MonoBehaviour {
                 rb.AddForce(transform.up * (p_VerticalThrust * 0.4f), ForceMode2D.Impulse);
             else
                 rb.AddForce(transform.up * p_VerticalThrust, ForceMode2D.Impulse);
-        } 
+
+            GetComponent<PlayerSound>().PlaySFX("jumpSFX"); 
+        }
+
+        
     }
 
     private void Crouch() {
