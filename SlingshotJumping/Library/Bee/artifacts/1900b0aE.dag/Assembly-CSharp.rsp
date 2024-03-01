@@ -121,6 +121,7 @@
 -define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
 -r:"Assets/Packages/SimplexNoise.2.0.0/lib/netstandard2.0/SimplexNoise.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
@@ -335,8 +336,11 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/AstarPathfindingProject.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/AstarPathfindingProjectEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PackageToolsEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PPv2URPConverters.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PsdPlugin.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Animation.Editor.ref.dll"
@@ -413,6 +417,7 @@
 "Assets/Scripts/Base Gameplay/RightSlingshot.cs"
 "Assets/Scripts/ButtonScript.cs"
 "Assets/Scripts/Enemy/MothMonster.cs"
+"Assets/Scripts/Enemy/Nav.cs"
 "Assets/Scripts/Enemy/PouncingMonster.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Keypad/Interactions.cs"

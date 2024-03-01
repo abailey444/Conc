@@ -123,6 +123,7 @@
 -define:ENABLE_XR_MODULE
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
 -r:"Assets/NuGet/Editor/NugetForUnity.dll"
 -r:"Assets/Packages/SimplexNoise.2.0.0/lib/netstandard2.0/SimplexNoise.dll"
 -r:"Assets/UnityTechnologies/EffectExamples/Editor/PackageManagerAssembly/PackageManagerAssembly.dll"
