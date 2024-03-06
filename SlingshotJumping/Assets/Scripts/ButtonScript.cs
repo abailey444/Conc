@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler//
+public class ButtonScript : MonoBehaviour//
 {
     public AudioSource audioSource;
     private string sceneName;
@@ -49,15 +49,7 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         }
         
     }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Cursor has entered selectable area");
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Cursor has left the selectable area");
-    }
-
+    
     public void Pause()
     {
         SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
