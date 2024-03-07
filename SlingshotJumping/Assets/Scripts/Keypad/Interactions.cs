@@ -18,6 +18,8 @@ public class Interactions : MonoBehaviour {
 
     private GameManager instance;
 
+    private ButtonDoorScr bds;
+
     private void Start() {
         Transform child = kd.keypadPanel.transform.GetChild(0);
         kd.keypadInput = child.gameObject.GetComponent<InputField>();
@@ -52,5 +54,12 @@ public class Interactions : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Exit" && instance.hasKey == true)
             instance.GoToNextLevel();
+
+        if (col.gameObject.tag == "Button")
+        {
+            bds.roomBlinds.SetActive(false);
+
+            //bds.closestDoor.tr;
+        }
     }
 }
