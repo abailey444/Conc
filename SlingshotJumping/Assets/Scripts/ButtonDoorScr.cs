@@ -21,9 +21,6 @@ public class ButtonDoorScr : MonoBehaviour
     float minDistance;
     int minDistanceIndex;
 
-    public GameObject closedDoor;
-    public GameObject openedDoor;
-
     public GameObject roomBlinds;
     
     // Start is called before the first frame update

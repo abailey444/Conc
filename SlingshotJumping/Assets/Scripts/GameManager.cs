@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
                 keypadCode = "";
                 break;
             case("Level1"):
-                keypadCode = "Level1";
+                keypadCode = "9642";
                 hasKey = false;
                 break;
             case("Level2"):

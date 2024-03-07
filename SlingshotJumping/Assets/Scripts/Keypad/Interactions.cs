@@ -18,7 +18,14 @@ public class Interactions : MonoBehaviour {
 
     private GameManager instance;
 
-    private ButtonDoorScr bds;
+    public ButtonDoorScr bds;
+
+    public GameObject door1;
+    public GameObject door2;
+
+    public GameObject notePanel;
+
+    public GameObject locker;
 
     private void Start() {
         Transform child = kd.keypadPanel.transform.GetChild(0);
@@ -57,9 +64,35 @@ public class Interactions : MonoBehaviour {
 
         if (col.gameObject.tag == "Button")
         {
-            bds.roomBlinds.SetActive(false);
+            bds.closestDoor.GetComponent<BoxCollider2D>().enabled = false;
 
-            //bds.closestDoor.tr;
+            door1 = bds.closestDoor.transform.GetChild(0).gameObject;
+            door2 = bds.closestDoor.transform.GetChild(1).gameObject;
+
+            door1.SetActive(false);
+            door2.SetActive(true);
+
+        }
+        if (col.gameObject.tag == "InRoom")
+        {
+            bds.roomBlinds.SetActive(false);
+        }
+        if (col.gameObject.tag == "OutRoom")
+        {
+            bds.roomBlinds.SetActive(true);
         }
     }
+
+    public void OnClickNote()
+    {
+        notePanel.SetActive(true);
+    }
+
+    public void OnClickExit()
+    {
+        notePanel.SetActive(false);
+    }
+
+    //IF THE LOCKER IS OPEN ENABLE KEY, LOCKER IS OPENED WITH KEYPAD
+
 }
