@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 490785982}
   - component: {fileID: 490785981}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: buttonScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3520,6 +3520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566250506}
   - component: {fileID: 1566250505}
+  - component: {fileID: 1566250507}
   m_Layer: 0
   m_Name: Music/SFX
   m_TagString: Untagged
@@ -3643,6 +3644,19 @@ Transform:
   - {fileID: 404278580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566250507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566250504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550de4a673f17c5468210705884da0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookThrow: {fileID: 8300000, guid: 81c31f037e05a674592441f12cf6c4f5, type: 3}
 --- !u!1 &1758945898
 GameObject:
   m_ObjectHideFlags: 0
