@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour {
     public string keypadCode;
     public bool hasKey;
 
-    private string sceneName;
+    public string sceneName;
+
+   
+
     
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;

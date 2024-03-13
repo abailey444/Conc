@@ -25,12 +25,19 @@ public class Interactions : MonoBehaviour {
 
     public GameObject notePanel;
 
-    public GameObject locker;
+    //can edit later
+    //key and locker variables to get keypad for lvl 1 to work right
+
+    public GameObject key;
+    public GameObject locker1;
+    public GameObject locker2;
 
     private void Start() {
         Transform child = kd.keypadPanel.transform.GetChild(0);
         kd.keypadInput = child.gameObject.GetComponent<InputField>();
         instance = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        key.SetActive(false);
     }
 
     private void Update() {

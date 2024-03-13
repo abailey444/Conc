@@ -7,6 +7,7 @@ using TMPro;
 public class Keypad : MonoBehaviour {
     private GameManager instance;
     private TMP_InputField inField;
+    public Interactions intScr;
 
     private void Start() { 
         inField = GetComponent<TMP_InputField>();
@@ -18,11 +19,23 @@ public class Keypad : MonoBehaviour {
             inField.text = "Correct code.";
             inField.enabled = false;
 
-            GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-            foreach(GameObject door in doors) {
-                door.SetActive(false);
+            if(instance.sceneName != "Level1")
+            {
+                GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+                foreach (GameObject door in doors)
+                {
+                    door.SetActive(false);
+                }
+            
             }
-        } else {
+            else
+            {
+                intScr.locker1.SetActive(false);
+                intScr.locker2.SetActive(true);
+                intScr.key.SetActive(true);
+            }
+        } 
+        else {
            inField.text = "Incorrect code.";
         }
     }
