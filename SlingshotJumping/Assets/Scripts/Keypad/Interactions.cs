@@ -25,6 +25,9 @@ public class Interactions : MonoBehaviour {
 
     public GameObject notePanel;
 
+    public GameObject kpdPanel;
+    public GameObject Monster;
+
     //can edit later
     //key and locker variables to get keypad for lvl 1 to work right
 
@@ -47,6 +50,15 @@ public class Interactions : MonoBehaviour {
 
         if(!passInputs)
             CheckForNoOverlap();
+
+        if (Input.GetKeyDown("0"))
+        {
+            instance.GoToNextLevel();
+        }
+        if (Input.GetKeyDown("1"))
+        {
+            instance.hasKey = true;
+        }
     }
 
     private void CheckForOverlapOnPress() {
@@ -88,6 +100,22 @@ public class Interactions : MonoBehaviour {
         {
             bds.roomBlinds.SetActive(true);
         }
+        if(col.gameObject.tag == "openKeypad")
+        {
+            kpdPanel.SetActive(true);
+        }
+        if (col.gameObject.tag == "closeKeypad")
+        {
+            kpdPanel.SetActive(false);
+        }
+        if (col.gameObject.tag == "Spawner")
+        {
+            Monster.SetActive(true);
+        }
+        if (col.gameObject.tag == "Despawner")
+        {
+            Monster.SetActive(false);
+        }
     }
 
     public void OnClickNote()
@@ -98,6 +126,7 @@ public class Interactions : MonoBehaviour {
     public void OnClickExit()
     {
         notePanel.SetActive(false);
+        kpdPanel.SetActive(false);
     }
 
     //IF THE LOCKER IS OPEN ENABLE KEY, LOCKER IS OPENED WITH KEYPAD

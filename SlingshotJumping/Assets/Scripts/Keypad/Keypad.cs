@@ -9,9 +9,16 @@ public class Keypad : MonoBehaviour {
     private TMP_InputField inField;
     public Interactions intScr;
 
+    public Canvas keyCanv;
+
     private void Start() { 
         inField = GetComponent<TMP_InputField>();
         instance = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+    }
+
+    private void Update()
+    {
     }
 
     public void OnClickEnter() {

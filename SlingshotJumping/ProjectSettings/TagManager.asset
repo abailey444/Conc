@@ -17,6 +17,8 @@ TagManager:
   - Exit
   - InRoom
   - OutRoom
+  - openKeypad
+  - closeKeypad
   layers:
   - Default
   - TransparentFX

@@ -4486,6 +4486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keypadCode: 
   hasKey: 0
+  sceneName: 
 --- !u!4 &1475848209
 Transform:
   m_ObjectHideFlags: 0
@@ -5217,6 +5218,10 @@ PrefabInstance:
     - target: {fileID: 150722824406037223, guid: d400e77f0177d874c8886847b5b2eb03, type: 3}
       propertyPath: m_Name
       value: Keypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519819937799621805, guid: d400e77f0177d874c8886847b5b2eb03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4695525705820769425, guid: d400e77f0177d874c8886847b5b2eb03, type: 3}
       propertyPath: instance
