@@ -1819,7 +1819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 19bb235b14800484e8c121540ab944b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2067,7 +2067,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 97047c038df81f248a3c1d9fad2a328c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2391,6 +2391,10 @@ PrefabInstance:
     - target: {fileID: 6790037337151515476, guid: 66225e249bed11f4db3ecb02df0d8124, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
       value: 0.99853027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372942559642215784, guid: 66225e249bed11f4db3ecb02df0d8124, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -5048,7 +5052,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1520282012
 RectTransform:
@@ -5394,7 +5398,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ba6b16e1d0a83044ebbd31f9391943a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5755,6 +5759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1299851631469144932, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5934087412579487098, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -5847,8 +5855,16 @@ PrefabInstance:
     - {fileID: 8396311969745645875, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1129035337249254852, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1928186975}
   m_SourcePrefab: {fileID: 100100000, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
+--- !u!1 &1835857474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1129035337249254852, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
+  m_PrefabInstance: {fileID: 1816975995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1871524429
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,12 +6081,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6337878878827325274, guid: 03d4d0f8098e002499705e3b66eb6c54, type: 3}
   m_PrefabInstance: {fileID: 1816975995}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1835857474}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc37d5227e9e8247808ec8d9027d984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1928186975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835857474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ea7990a1810d145a5cada80f3d0950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensity: 0
+  mainCam: {fileID: 985084882}
 --- !u!1 &1951564037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6286,6 +6316,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6103502201037888334, guid: b613b28f4fcc624489a168b159e3692c, type: 3}
+      propertyPath: scary
+      value: 
+      objectReference: {fileID: 1928186975}
+    - target: {fileID: 6103502201037888334, guid: b613b28f4fcc624489a168b159e3692c, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1928186965}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

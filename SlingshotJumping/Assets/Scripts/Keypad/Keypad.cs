@@ -26,7 +26,7 @@ public class Keypad : MonoBehaviour {
 
     private void Update()
     {
-        checkIfOpen();
+        //checkIfOpen();
     }
 
     public void OnClickEnter() {
@@ -34,7 +34,18 @@ public class Keypad : MonoBehaviour {
             inField.text = "Correct code.";
             inField.enabled = false;
 
-            if(instance.sceneName != "Level1")
+            locker1 = locker.transform.GetChild(0).gameObject;
+            locker2 = locker.transform.GetChild(1).gameObject;
+
+            locker1.SetActive(false);
+            locker2.SetActive(true);
+
+
+            locker1.SetActive(false);
+            locker2.SetActive(true);
+            intScr.key.SetActive(true);
+
+            if (instance.sceneName != "Level1")
             {
                 GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
                 foreach (GameObject door in doors)

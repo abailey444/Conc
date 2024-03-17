@@ -41,7 +41,7 @@ public class Interactions : MonoBehaviour {
         kd.keypadInput = child.gameObject.GetComponent<InputField>();
         instance = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        key.SetActive(false);
+        //key.SetActive(false);
     }
 
     private void Update() {
