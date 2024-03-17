@@ -32,8 +32,9 @@ public class Interactions : MonoBehaviour {
     //key and locker variables to get keypad for lvl 1 to work right
 
     public GameObject key;
-    public GameObject locker1;
-    public GameObject locker2;
+
+
+    public Keypad kpd;
 
     private void Start() {
         Transform child = kd.keypadPanel.transform.GetChild(0);
@@ -58,6 +59,10 @@ public class Interactions : MonoBehaviour {
         if (Input.GetKeyDown("1"))
         {
             instance.hasKey = true;
+        }
+        if (kpd.isOpen == true)
+        {
+            key.SetActive(true);
         }
     }
 

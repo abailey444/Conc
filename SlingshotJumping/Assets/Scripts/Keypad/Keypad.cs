@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
 
 public class Keypad : MonoBehaviour {
     private GameManager instance;
     private TMP_InputField inField;
     public Interactions intScr;
+    public bool isOpen = false;
 
-    public Canvas keyCanv;
+    public GameObject locker;
+    public GameObject locker1;
+    public GameObject locker2;
+
+
+    //public Canvas keyCanv;
 
     private void Start() { 
         inField = GetComponent<TMP_InputField>();
@@ -19,6 +26,7 @@ public class Keypad : MonoBehaviour {
 
     private void Update()
     {
+        checkIfOpen();
     }
 
     public void OnClickEnter() {
@@ -37,8 +45,15 @@ public class Keypad : MonoBehaviour {
             }
             else
             {
-                intScr.locker1.SetActive(false);
-                intScr.locker2.SetActive(true);
+                locker1 = locker.transform.GetChild(0).gameObject;
+                locker2 = locker.transform.GetChild(1).gameObject;
+
+                locker1.SetActive(false);
+                locker2.SetActive(true);
+
+
+                locker1.SetActive(false);
+                locker2.SetActive(true);
                 intScr.key.SetActive(true);
             }
         } 
@@ -46,4 +61,13 @@ public class Keypad : MonoBehaviour {
            inField.text = "Incorrect code.";
         }
     }
+
+    public void checkIfOpen()
+    {
+        if(inField.text == "Correct code.")
+        {
+            isOpen = true;
+        }
+    }
+
 }

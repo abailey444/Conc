@@ -5,6 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour {
     private GameObject player;
     private GameManager instance;
+    Keypad kpd;
 
     private void Start() => instance = GameObject.Find("GameManager").GetComponent<GameManager>();
 
