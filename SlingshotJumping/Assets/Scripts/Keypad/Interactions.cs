@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Interactions : MonoBehaviour {
@@ -120,6 +121,11 @@ public class Interactions : MonoBehaviour {
         if (col.gameObject.tag == "Despawner")
         {
             Monster.SetActive(false);
+        }
+        if (col.gameObject.tag == "Monster")
+        {
+            SceneManager.LoadScene("Lose");
+
         }
     }
 
