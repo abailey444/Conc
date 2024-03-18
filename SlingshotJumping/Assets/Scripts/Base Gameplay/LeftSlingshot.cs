@@ -44,6 +44,7 @@ public class LeftSlingshot : MonoBehaviour {
 
         GameObject player = transform.parent.gameObject;
         player.GetComponent<PlayerSound>().PlaySFX("BookNoiseSFX");
+        ////SoundManager.PlaySound();
 
         GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(canvas.GetComponent<UI>().UpdateLoadingBar());

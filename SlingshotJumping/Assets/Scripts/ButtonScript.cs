@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler//
+public class ButtonScript : MonoBehaviour//
 {
     public AudioSource audioSource;
     private string sceneName;
     public Animator transition;
     public float transitionTime = 1f;
-    private bool isPaused = false;
+    private bool pauseLoaded = false;
 
 
 
@@ -35,37 +35,43 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause();
-            isPaused = true;
+
+            if (SceneManager.GetActiveScene().name != "PauseMenu")
+            {
+                Pause();
+            }
+            else
+            {
+                Resume();
+            }
             
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
-        {
-            Resume();
-            isPaused = false;
-            
-        }
+
         
     }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Cursor has entered selectable area");
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Cursor has left the selectable area");
-    }
-
+    
     public void Pause()
     {
-        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
-        Time.timeScale = 0f;
+        if (SceneManager.GetActiveScene().name != "PauseMenu")
+        {
+            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+            
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("PauseMenu"));
+            Time.timeScale = 0f;
+
+        }
+        
 
     }
     public void Resume()
     {
+        while (SceneManager.GetActiveScene().name == "PauseMenu")
+        {
+            SceneManager.UnloadSceneAsync("PauseMenu");
+        }
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
     }
