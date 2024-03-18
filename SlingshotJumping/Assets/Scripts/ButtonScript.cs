@@ -11,7 +11,7 @@ public class ButtonScript : MonoBehaviour//
     private string sceneName;
     public Animator transition;
     public float transitionTime = 1f;
-    private bool isPaused = false;
+    private bool pauseLoaded = false;
 
 
 
@@ -35,29 +35,43 @@ public class ButtonScript : MonoBehaviour//
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause();
-            isPaused = true;
+
+            if (SceneManager.GetActiveScene().name != "PauseMenu")
+            {
+                Pause();
+            }
+            else
+            {
+                Resume();
+            }
             
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
-        {
-            Resume();
-            isPaused = false;
-            
-        }
+
         
     }
     
     public void Pause()
     {
-        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
-        Time.timeScale = 0f;
+        if (SceneManager.GetActiveScene().name != "PauseMenu")
+        {
+            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+            
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("PauseMenu"));
+            Time.timeScale = 0f;
+
+        }
+        
 
     }
     public void Resume()
     {
+        while (SceneManager.GetActiveScene().name == "PauseMenu")
+        {
+            SceneManager.UnloadSceneAsync("PauseMenu");
+        }
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
     }
