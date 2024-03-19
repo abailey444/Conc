@@ -5,19 +5,18 @@ using UnityEngine;
 public class Key : MonoBehaviour {
     private GameObject player;
     private GameManager instance;
-    Keypad kpd;
 
     private void Start() => instance = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.tag == "Player") {
+        if(col.gameObject.tag == "Player" && instance.keyEnabled) {
             player = col.gameObject;
-            instance.hasKey = true;
+            instance.keyPickedUp = true;
         }
     }
 
     private void FixedUpdate() {
-        if(instance.hasKey) {
+        if(instance.keyPickedUp) {
             MoveKeyToPlayer();
         } else {
             Oscillate();

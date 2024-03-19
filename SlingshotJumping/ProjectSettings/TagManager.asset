@@ -19,6 +19,7 @@ TagManager:
   - OutRoom
   - openKeypad
   - closeKeypad
+  - UIButton
   layers:
   - Default
   - TransparentFX

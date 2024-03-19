@@ -3,82 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.Mathematics;
 
 public class Keypad : MonoBehaviour {
     private GameManager instance;
-    private TMP_InputField inField;
-    public Interactions intScr;
-    public bool isOpen = false;
-
-    public GameObject locker;
-    public GameObject locker1;
-    public GameObject locker2;
-
-
-    //public Canvas keyCanv;
+    private TMP_Text textObj;
+    private string enteredCode = "";
 
     private void Start() { 
-        inField = GetComponent<TMP_InputField>();
         instance = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        textObj = GetComponent<TMP_Text>();
     }
 
-    private void Update()
-    {
-        //checkIfOpen();
+    // Updates the displayed code in the UI.
+    // "CLEAR" (case sensitive) clears the screen
+    // Buttons stop doing anything when you reach 6 digits. 
+    private void SetCode(string toAdd) {
+        if(toAdd == "CLEAR") {
+            enteredCode = "";
+        } else {
+            if(4 > enteredCode.Length)
+                enteredCode += toAdd;
+        }
+
+        textObj.text = enteredCode;
     }
 
-    public void OnClickEnter() {
-        if(inField.text.ToString() == instance.keypadCode) {
-            inField.text = "Correct code.";
-            inField.enabled = false;
-
-            locker1 = locker.transform.GetChild(0).gameObject;
-            locker2 = locker.transform.GetChild(1).gameObject;
-
-            locker1.SetActive(false);
-            locker2.SetActive(true);
-
-
-            locker1.SetActive(false);
-            locker2.SetActive(true);
-            intScr.key.SetActive(true);
-
-            if (instance.sceneName != "Level1")
-            {
-                GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-                foreach (GameObject door in doors)
-                {
-                    door.SetActive(false);
-                }
-            
-            }
-            else
-            {
-                locker1 = locker.transform.GetChild(0).gameObject;
-                locker2 = locker.transform.GetChild(1).gameObject;
-
-                locker1.SetActive(false);
-                locker2.SetActive(true);
-
-
-                locker1.SetActive(false);
-                locker2.SetActive(true);
-                intScr.key.SetActive(true);
-            }
-        } 
-        else {
-           inField.text = "Incorrect code.";
+    // Putting this in a separate method because I don't like nesting code.
+    // Finds a list of all the keypad buttons and turns off interactability. 
+    private void TurnOffButtons() {
+        GameObject[] buttons = GameObject.FindGameObjectsWithTag("UIButton");
+        foreach(var button in buttons) {
+            button.GetComponent<Button>().interactable = false;
         }
     }
 
-    public void checkIfOpen()
-    {
-        if(inField.text == "Correct code.")
-        {
-            isOpen = true;
+    #region buttons
+
+    public void OnClickOne() {
+        SetCode("1");
+    } public void OnClickTwo() {
+        SetCode("2");
+    } public void OnClickThree() {
+        SetCode("3");
+    } public void OnClickFour() {
+        SetCode("4");
+    } public void OnClickFive() {
+        SetCode("5");
+    } public void OnClickSix() {
+        SetCode("6");
+    } public void OnClickSeven() {
+        SetCode("7");
+    } public void OnClickEight() {
+        SetCode("8");
+    } public void OnClickNine() {
+        SetCode("9");
+    } public void OnClickClear() {
+        SetCode("CLEAR");
+    } public void OnClickEnter() {
+        // Check if code is correct
+        if(enteredCode == instance.keypadCode) {
+            textObj.text = "Correct code.";
+            TurnOffButtons();
+            instance.keyEnabled = true;
+        } else {
+            textObj.text = "Incorrect code.";
+            SetCode("CLEAR");
         }
     }
 
+    #endregion
 }

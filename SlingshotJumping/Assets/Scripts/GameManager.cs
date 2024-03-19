@@ -7,12 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public static GameManager Instance;
     public string keypadCode;
-    public bool hasKey;
+    public bool keyEnabled;
+    public bool keyPickedUp;
 
     public string sceneName;
-
-   
-
     
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -40,20 +38,20 @@ public class GameManager : MonoBehaviour {
                 break;
             case("Level1"):
                 keypadCode = "9642";
-                hasKey = false;
+                keyEnabled = false;
                 break;
             case("Level2"):
-                keypadCode = "Level2";
-                hasKey = false;
+                keypadCode = "0002";
+                keyEnabled = false;
                 break;
             case("Level3"):
-                keypadCode = "Level3";
-                hasKey = false;
+                keypadCode = "0003";
+                keyEnabled = false;
                 break;
             case("Basic"):
             case("LevelTemplate"):
-                keypadCode = "TESTCODE";
-                hasKey = false;
+                keypadCode = "1234";
+                keyEnabled = false;
                 break;
             default:
                 Debug.Log("Case not in switch, doing nothing.");
