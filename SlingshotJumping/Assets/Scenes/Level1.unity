@@ -668,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &230782261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,11 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28df722e7b38334bbcadc13711f900c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intScr: {fileID: 1928186967}
-  isOpen: 0
-  locker: {fileID: 291149798}
-  locker1: {fileID: 115382737}
-  locker2: {fileID: 1278186439}
 --- !u!1 &467624007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2176,10 @@ PrefabInstance:
     - target: {fileID: 2394612000347301081, guid: 0e7136397ff108e4f922ff2f31b4f316, type: 3}
       propertyPath: m_Name
       value: PostProcessing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2394612000347301081, guid: 0e7136397ff108e4f922ff2f31b4f316, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4289,7 +4288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypadCode: 
-  hasKey: 0
+  keyEnabled: 0
+  keyPickedUp: 0
   sceneName: 
 --- !u!4 &1310299832
 Transform:

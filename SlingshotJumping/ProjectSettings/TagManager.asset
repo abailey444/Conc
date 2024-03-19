@@ -12,14 +12,9 @@ TagManager:
   - Monster
   - Keypad
   - Door
-  - Spawner
-  - Despawner
   - Exit
-  - InRoom
-  - OutRoom
-  - openKeypad
-  - closeKeypad
   - UIButton
+  - Bookcase
   layers:
   - Default
   - TransparentFX
