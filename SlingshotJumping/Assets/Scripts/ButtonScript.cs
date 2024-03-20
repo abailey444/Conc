@@ -39,15 +39,7 @@ public class ButtonScript : MonoBehaviour//
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
-            if (SceneManager.GetActiveScene().name != "PauseMenu")
-            {
-                Pause();
-            }
-            else
-            {
-                Resume();
-            }
-            
+            Pause();
         }
 
         
@@ -61,9 +53,24 @@ public class ButtonScript : MonoBehaviour//
             
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("PauseMenu"));
             Time.timeScale = 0f;
+            pauseLoaded = true;
 
         }
-        
+        else
+        {
+            while (SceneManager.GetActiveScene().name == "PauseMenu")
+            {
+                SceneManager.UnloadSceneAsync("PauseMenu");
+            }
+            SceneManager.UnloadSceneAsync("PauseMenu");
+            
+        }
+        if (SceneManager.GetActiveScene().name != "PauseMenu")
+        {
+            pauseLoaded = false;
+            Time.timeScale = 1f;
+        }
+
 
     }
     public void Resume()
