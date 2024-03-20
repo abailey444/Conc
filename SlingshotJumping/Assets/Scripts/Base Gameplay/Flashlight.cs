@@ -14,8 +14,8 @@ namespace UnityEngine.Rendering.Universal {
 
         private void Start() {
             light2d = GetComponent<Light2D>();
-            float angleX = Mathf.Atan2(light2d.shapePath[1].y - transform.position.x, light2d.shapePath[1].x - transform.position.x) * Mathf.Rad2Deg;
-            float angleY = Mathf.Atan2(light2d.shapePath[2].y - transform.position.x, light2d.shapePath[2].x - transform.position.x) * Mathf.Rad2Deg;
+            float angleX = Mathf.Atan2(light2d.shapePath[1].y - transform.localPosition.x, light2d.shapePath[1].x - transform.localPosition.x) * Mathf.Rad2Deg;
+            float angleY = Mathf.Atan2(light2d.shapePath[2].y - transform.localPosition.x, light2d.shapePath[2].x - transform.localPosition.x) * Mathf.Rad2Deg;
             Vector2 newPosX = light2d.shapePath[1] + Quaternion.Euler(0,0,angleX) * Vector2.right * 50;
             Vector2 newPosY = light2d.shapePath[2] + Quaternion.Euler(0,0,angleY) * Vector2.right * 50;
             light2d.shapePath[1] = newPosX;
