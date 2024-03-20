@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour {
     public string keypadCode;
     public bool keyEnabled;
     public bool keyPickedUp;
+    public float timeIndex { get; private set; }
+    public string sceneName { get; private set; }
 
-    public string sceneName;
+    
     
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -39,19 +41,23 @@ public class GameManager : MonoBehaviour {
             case("Level1"):
                 keypadCode = "9642";
                 keyEnabled = false;
+                StartCoroutine(Timer(60));
                 break;
             case("Level2"):
                 keypadCode = "0002";
                 keyEnabled = false;
+                StartCoroutine(Timer(60));
                 break;
             case("Level3"):
                 keypadCode = "0003";
                 keyEnabled = false;
+                StartCoroutine(Timer(60));
                 break;
             case("Basic"):
             case("LevelTemplate"):
                 keypadCode = "1234";
                 keyEnabled = false;
+                StartCoroutine(Timer(123456789));
                 break;
             default:
                 Debug.Log("Case not in switch, doing nothing.");
@@ -76,7 +82,20 @@ public class GameManager : MonoBehaviour {
                 break;
             default:
                 Debug.Log("Errrrmmmmm......");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 break;
         }
+    }
+
+    // Accepts an int for length in seconds
+    private IEnumerator Timer(float length) {
+        timeIndex = length;
+        while(timeIndex > 0) {
+            timeIndex--;
+            yield return new WaitForSeconds(1);
+        }
+        
+        GoToNextLevel();
+        yield return null;
     }
 }
