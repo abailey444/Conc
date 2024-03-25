@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager Instance;
-    public string keypadCode;
-    public bool keyEnabled;
-    public bool keyPickedUp;
+    public string keypadCode { get; private set; }
+    public bool keyEnabled { get; set; }
+    public bool keyPickedUp { get; set; }
     public float timeIndex { get; private set; }
     public string sceneName { get; private set; }
 
