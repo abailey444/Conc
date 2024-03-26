@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class ButtonScript : MonoBehaviour//
 {
@@ -35,10 +36,8 @@ public class ButtonScript : MonoBehaviour//
     }
     private void Update()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseLoaded == false)
         {
-
             Pause();
         }
 
@@ -47,40 +46,17 @@ public class ButtonScript : MonoBehaviour//
     
     public void Pause()
     {
-        if (SceneManager.GetActiveScene().name != "PauseMenu")
-        {
-            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
-            
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("PauseMenu"));
-            Time.timeScale = 0f;
-            pauseLoaded = true;
-
-        }
-        else
-        {
-            while (SceneManager.GetActiveScene().name == "PauseMenu")
-            {
-                SceneManager.UnloadSceneAsync("PauseMenu");
-            }
-            SceneManager.UnloadSceneAsync("PauseMenu");
-            
-        }
-        if (SceneManager.GetActiveScene().name != "PauseMenu")
-        {
-            pauseLoaded = false;
-            Time.timeScale = 1f;
-        }
-
-
+        Time.timeScale = 0f;
+        pauseLoaded = true;
+        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        
+        
     }
     public void Resume()
     {
-        while (SceneManager.GetActiveScene().name == "PauseMenu")
-        {
-            SceneManager.UnloadSceneAsync("PauseMenu");
-        }
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
+        pauseLoaded = false;
     }
     public void LoadScene(string scene)
     {
