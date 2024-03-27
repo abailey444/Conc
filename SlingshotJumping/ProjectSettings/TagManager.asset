@@ -14,7 +14,11 @@ TagManager:
   - Door
   - Exit
   - UIButton
-  - Bookcase
+  - Spawner
+  - Bookcase1
+  - Bookcase2
+  - Bookcase3
+  - Bookcase4
   layers:
   - Default
   - TransparentFX

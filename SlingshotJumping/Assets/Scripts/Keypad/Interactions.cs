@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Interactions : MonoBehaviour {
     [Serializable]
+
     public struct KeypadData {
         public GameObject keypadPanel;
         [HideInInspector] public InputField keypadInput;
