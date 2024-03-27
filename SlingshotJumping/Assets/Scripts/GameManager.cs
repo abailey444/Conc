@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
                 keypadCode = "";
                 break;
             case("Level1"):
-                keypadCode = "9642";
+                keypadCode = "112310";
                 keyEnabled = false;
                 StartCoroutine(Timer(60));
                 break;
